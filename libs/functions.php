@@ -80,11 +80,11 @@ function postData($query, $type){
 				break;
 
 			case 'update':
-				$datos= $dbh->rowCount();
+				$datos= $data->rowCount();
 				break;
 
 			case 'delete':
-				$datos= $dbh->rowCount();
+				$datos= $data->rowCount();
 				break;
 		}
 		$con= null;
