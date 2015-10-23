@@ -67,27 +67,26 @@ function getData($query, $type){
  */
 function postData($query, $type){
 	try {
+		try {
 		$datos= [];
-
+		
 		$con= getConnection();
 		$data= $con->prepare($query);
 		$data->execute();
 
 		switch ($type) {
 			case 'insert':
-				$datos= $data->lastInsertId();
+				$datos= $con->lastInsertId();
 				break;
-			
+
 			case 'update':
-				$datos= $con->countRow();
+				$datos= $dbh->rowCount();
 				break;
 
 			case 'delete':
-				$datos= $con->countRow();
+				$datos= $dbh->rowCount();
 				break;
-
 		}
-
 		$con= null;
 		return $datos;
 	} catch (PDOException $e) {
