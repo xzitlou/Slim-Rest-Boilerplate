@@ -67,7 +67,6 @@ function getData($query, $type){
  */
 function postData($query, $type){
 	try {
-		try {
 		$datos= [];
 		
 		$con= getConnection();

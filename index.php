@@ -12,7 +12,7 @@
  * $directory= "/directorio/"
  * Comentar si estará en la raíz
  */
-// $directory= "/v1/";
+$directory= "/";
 
 /**
  * @description
